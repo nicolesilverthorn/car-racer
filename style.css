@@ -116,6 +116,7 @@ p{
 @media screen and (max-width: 520px) {
 	.score{
 		left: 50%;
+		width: 200px;
 	}
 	
 	#dirDown{
