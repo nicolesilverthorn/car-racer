@@ -119,12 +119,12 @@ p{
 	}
 	
 	.startScreen{
-		top: 30%;
+		top: 40%;
 	}
 	
 	.carGame{
 		width: 100vw;
-		height: 50%;
+		height: 500px;
 	}
 	
 	.car{
