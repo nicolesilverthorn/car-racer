@@ -113,7 +113,11 @@ p{
 	padding-bottom: 10px;
 }
 
-@media screen and (max-width: 520px) {			
+@media screen and (max-width: 520px) {
+	.score{
+		left: 50%;
+	}
+	
 	#dirDown{
 		font-size: 40px;
 		font-weight: bold;
