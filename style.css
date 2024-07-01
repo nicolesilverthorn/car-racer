@@ -118,6 +118,10 @@ p{
 		
 	}
 	
+	.startScreen{
+		top: 10%;
+	}
+	
 	.carGame{
 		width: 100vw;
 		height: 100vh;
