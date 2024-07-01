@@ -22,7 +22,7 @@ let player = { speed: 7, score: 0 };
 level.addEventListener('click', (e)=> {
     player.speed = levelSpeed[e.target.id];
 });
-level.addEventListener('touchstart', (e)=> {
+level.addEventListener('pointerdown', (e)=> {
     player.speed = levelSpeed[e.target.id];
 });
 
@@ -61,7 +61,7 @@ startScreen.addEventListener('click', () => {
         gameArea.appendChild(enemyCar);
     }
 });
-startScreen.addEventListener('touchstart', () => {
+startScreen.addEventListener('pointerdown', () => {
     startScreen.classList.add('hide');
     gameArea.innerHTML = "";
 
@@ -177,7 +177,7 @@ document.addEventListener('keydown', (e)=>{
     e.preventDefault();
     keys[e.key] = true;
 });
-document.addEventListener('touchstart', (e)=>{
+document.addEventListener('pointerdown', (e)=>{
     e.preventDefault();
 });
 
@@ -185,7 +185,7 @@ document.addEventListener('keyup', (e)=>{
     e.preventDefault();
     keys[e.key] = false;
 });
-document.addEventListener('touchend', (e)=>{
+document.addEventListener('pointerout', (e)=>{
     e.preventDefault();
 });
 
