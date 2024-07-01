@@ -114,8 +114,9 @@ p{
 
 @media screen and (max-width: 480px) {
 	.score{
-		left: 40%;
+		left: 30%;
 		z-index: 99;
+		width: 250px;
 	}
 	
 	.startScreen{
