@@ -34,7 +34,6 @@
 	position: absolute;
 	background: #efbf3b;
 	margin-left: 195px;
-	overflow: hidden;
 }
 
 .gameArea{
@@ -115,8 +114,17 @@ p{
 
 @media screen and (max-width: 520px) {
 	.score{
-		left: 50%;
+		left: 40%;
 		width: 200px;
+	}
+	
+	.carGame{
+		width: 100vw;
+		height: 100vh;
+	}
+	
+	.car{
+		bottom: 0;
 	}
 	
 	#dirDown{
