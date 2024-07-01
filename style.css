@@ -116,7 +116,7 @@ p{
 	.score{
 		left: 30%;
 		z-index: 99;
-		width: 250px;
+		width: 150px;
 	}
 	
 	.startScreen{
@@ -129,7 +129,7 @@ p{
 	}
 	
 	.car{
-		bottom: 1vh;
+		bottom: -500px;
 	}
 	
 	#dirDown{
