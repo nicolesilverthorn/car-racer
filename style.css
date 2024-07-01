@@ -135,7 +135,7 @@ p{
 	}
 	
 	.car{
-		bottom: -650px;
+		bottom: -600px;
 		left: 5px;
 	}
 	
@@ -148,7 +148,7 @@ p{
 		align-items: center;
 		position: absolute;
 		
-		left: calc(50% - 13px);
+		left: calc(50% - 14px);
 		bottom: 100px;
 		
 		width: 50px;
@@ -166,7 +166,7 @@ p{
 		align-items: center;
 		position: absolute;
 		
-		left: calc(50% - 13px);
+		left: calc(50% - 14px);
 		bottom: 0;
 		
 		width: 50px;
