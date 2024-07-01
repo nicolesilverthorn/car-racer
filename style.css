@@ -112,7 +112,7 @@ p{
 	padding-bottom: 10px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 680px) {
 	.score{
 		right: 0;
 		z-index: 99;
@@ -159,7 +159,7 @@ p{
 		align-items: center;
 		position: absolute;
 		
-		left: 0;
+		left: calc(50% - 50px);
 		bottom: 50px;
 		
 		width: 50px;
