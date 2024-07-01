@@ -77,9 +77,9 @@
 	margin: auto;
 	width: 50%;
 	cursor: pointer;
-	letter-spacing: 5;
-	font-size: 20px;
-	word-spacing: 3;
+	font-size: 21px;
+	word-spacing: 5px;
+	/*letter-spacing: 3px;*/	
 	line-height: 30px;
 	text-transform: uppercase;
 	box-shadow: 0 5px 5px #777;
