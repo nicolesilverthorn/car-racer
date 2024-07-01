@@ -190,7 +190,7 @@ document.addEventListener('pointerout', (e)=>{
     e.preventDefault();
 	e.stopPropagation();
 });
-
+/*
 $(function(){
 	$('button.dirUp').bind('taphold', moveUp);
 	$('button.dirDown').bind('taphold', moveDown);
@@ -198,7 +198,7 @@ $(function(){
 	$('button.dirRight').bind('taphold', moveRight);
 	}
 });
-
+*/
 function moveUp() {
 	if(player.y > (road.top + 70))
 		player.y -= player.speed;
