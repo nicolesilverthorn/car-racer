@@ -136,25 +136,35 @@ function gamePlay() {
     }
 }
 
-document.addEventListener('pointerdown', (e)=>{
+document.addEventListener('keydown', (e)=>{
     e.preventDefault();
     keys[e.key] = true;
 });
+document.addEventListener('touchstart', (e)=>{
+    e.preventDefault();
+});
 
-document.addEventListener('pointerup', (e)=>{
+document.addEventListener('keyup', (e)=>{
     e.preventDefault();
     keys[e.key] = false;
 });
+document.addEventListener('touchend', (e)=>{
+    e.preventDefault();
+});
 
 	function moveUp() {
-		if(player.y > (road.top + 70)) player.y -= player.speed;
+		if(player.y > (road.top + 70))
+			player.y -= player.speed;
 		}
 	function moveDown() {
-		if(player.y < (road.bottom - 85)) player.y += player.speed;
+		if(player.y < (road.bottom - 85))
+			player.y += player.speed;
 		}
 	function moveLeft() {
-		if(player.x > 0) player.x -= player.speed;
+		if(player.x > 0)
+			player.x -= player.speed;
 		}
 	function moveRight() {
-		if(player.x < (road.width - 70)) player.x += player.speed;
+		if(player.x < (road.width - 70))	
+			player.x += player.speed;
 		}
