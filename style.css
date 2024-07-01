@@ -113,6 +113,10 @@ p{
 }
 
 @media screen and (max-width: 680px), (max-height: 900px) {
+	* {
+		touch-action: manipulation;
+	}
+	
 	.score{
 		right: 0;
 		z-index: 99;
