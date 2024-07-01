@@ -126,6 +126,7 @@ p{
 	.carGame{
 		width: 100vw;
 		height: 100vh;
+		overflow-y: none;
 	}
 	
 	.car{
