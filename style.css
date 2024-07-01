@@ -133,6 +133,24 @@ p{
 		bottom: -500px;
 	}
 	
+	#dirUp{
+		font-size: 30px;
+		font-weight: bold;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		
+		left: 50%;
+		bottom: 100px;
+		
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+	
 	#dirDown{
 		font-size: 30px;
 		font-weight: bold;
@@ -143,7 +161,7 @@ p{
 		position: absolute;
 		
 		left: calc(50% - 25px);
-		bottom: 0vh;
+		bottom: 0;
 		
 		width: 50px;
 		height: 50px;
@@ -180,24 +198,6 @@ p{
 		
 		left: calc(50% + 50px);
 		bottom: 50px;
-		
-		width: 50px;
-		height: 50px;
-		border-radius: 50%;
-		cursor: pointer;
-	}
-
-	#dirUp{
-		font-size: 30px;
-		font-weight: bold;
-		text-align: center;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		position: absolute;
-		
-		left: calc(50% - 25px);
-		bottom: 100px;
 		
 		width: 50px;
 		height: 50px;
