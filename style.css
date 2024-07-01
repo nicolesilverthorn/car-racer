@@ -147,7 +147,7 @@ p{
 		align-items: center;
 		position: absolute;
 		
-		left: calc(50% - 12px);
+		left: calc(50% - 13px);
 		bottom: 100px;
 		
 		width: 50px;
@@ -165,7 +165,7 @@ p{
 		align-items: center;
 		position: absolute;
 		
-		left: calc(50% - 12px);
+		left: calc(50% - 13px);
 		bottom: 0;
 		
 		width: 50px;
@@ -183,7 +183,7 @@ p{
 		align-items: center;
 		position: absolute;
 		
-		left: calc(50% - 12px);
+		left: calc(50% - 25px);
 		bottom: 50px;
 		
 		width: 50px;
@@ -201,7 +201,7 @@ p{
 		align-items: center;
 		position: absolute;
 		
-		left: calc(50% + 12px);
+		left: calc(50% + 25px);
 		bottom: 50px;
 		
 		width: 50px;
