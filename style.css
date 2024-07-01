@@ -135,7 +135,8 @@ p{
 	}
 	
 	.car{
-		bottom: -600px;
+		bottom: -650px;
+		left: 5px;
 	}
 	
 	#dirUp{
@@ -183,7 +184,7 @@ p{
 		align-items: center;
 		position: absolute;
 		
-		left: calc(50% - 25px);
+		left: calc(50% - 50px);
 		bottom: 50px;
 		
 		width: 50px;
