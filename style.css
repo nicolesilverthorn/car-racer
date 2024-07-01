@@ -112,7 +112,7 @@ p{
 	padding-bottom: 10px;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 680px), (max-height: 900px) {
 	.score{
 		right: 0;
 		z-index: 99;
