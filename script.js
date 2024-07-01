@@ -179,6 +179,7 @@ document.addEventListener('keydown', (e)=>{
 });
 document.addEventListener('pointerdown', (e)=>{
     e.preventDefault();
+	e.stopPropagation();
 });
 
 document.addEventListener('keyup', (e)=>{
@@ -187,6 +188,7 @@ document.addEventListener('keyup', (e)=>{
 });
 document.addEventListener('pointerout', (e)=>{
     e.preventDefault();
+	e.stopPropagation();
 });
 
 	function moveUp() {
