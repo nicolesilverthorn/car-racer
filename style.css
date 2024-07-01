@@ -138,7 +138,7 @@ p{
 		left: 5px;
 	}
 	
-	#dirUp{
+	.dirUp{
 		font-size: 30px;
 		font-weight: bold;
 		text-align: center;
@@ -156,7 +156,7 @@ p{
 		cursor: pointer;
 	}
 	
-	#dirDown{
+	.dirDown{
 		font-size: 30px;
 		font-weight: bold;
 		text-align: center;
@@ -174,7 +174,7 @@ p{
 		cursor: pointer;
 	}
 
-	#dirLeft{
+	.dirLeft{
 		font-size: 30px;
 		font-weight: bold;
 		text-align: center;
@@ -192,7 +192,7 @@ p{
 		cursor: pointer;
 	}
 
-	#dirRight{
+	.dirRight{
 		font-size: 30px;
 		font-weight: bold;
 		text-align: center;

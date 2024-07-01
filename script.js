@@ -191,19 +191,27 @@ document.addEventListener('pointerout', (e)=>{
 	e.stopPropagation();
 });
 
-	function moveUp() {
-		if(player.y > (road.top + 70))
-			player.y -= player.speed;
-		}
-	function moveDown() {
-		if(player.y < (road.bottom - 85))
-			player.y += player.speed;
-		}
-	function moveLeft() {
-		if(player.x > 0)
-			player.x -= player.speed;
-		}
-	function moveRight() {
-		if(player.x < (road.width - 70))	
-			player.x += player.speed;
-		}
+$(function(){
+	$('button.dirUp').bind('taphold', moveUp);
+	$('button.dirDown').bind('taphold', moveDown);
+	$('button.dirLeft').bind('taphold', moveLeft);
+	$('button.dirRight').bind('taphold', moveRight);
+	}
+});
+
+function moveUp() {
+	if(player.y > (road.top + 70))
+		player.y -= player.speed;
+	}
+function moveDown() {
+	if(player.y < (road.bottom - 85))
+		player.y += player.speed;
+	}
+function moveLeft() {
+	if(player.x > 0)
+		player.x -= player.speed;
+	}
+function moveRight() {
+	if(player.x < (road.width - 70))	
+		player.x += player.speed;
+	}
