@@ -124,11 +124,11 @@ p{
 	
 	.carGame{
 		width: 100vw;
-		height: 500px;
+		height: 100vh;
 	}
 	
 	.car{
-		bottom: -120px;
+		bottom: 1vh;
 	}
 	
 	#dirDown{
