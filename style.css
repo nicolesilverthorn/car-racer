@@ -1,0 +1,154 @@
+*{margin: 0; padding: 0; font-family: 'Unbounded', sans-serif;}
+        .hide{display: none;}
+        .carGame{
+            width: 100%;
+            height: 100vh;
+            background-image: url('assets/images/bg.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .car, .enemyCar{
+            width: 50px;
+            height: 70px;
+			border-radius: 25%;
+            background: darkblue;
+            position: absolute;
+            bottom: 120px;
+            background-image: url('assets/images/car.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .roadLines{
+            width: 10px;
+            height: 100px;
+            position: absolute;
+            background: #efbf3b;
+            margin-left: 195px;
+        }
+        .gameArea{
+            width: 400px;
+            height: 100vh;
+            background: #2d3436;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+            border-right: 7px dashed #fff;
+            border-left: 7px dashed #fff;
+        }
+        .score{
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #4bd236;
+            width: 300px;
+            line-height: 70px;
+            text-align: center;
+            color: white;
+            font-size: 1.5em;
+			font-weight: bold;
+            box-shadow: 0 5px 5px #777;
+			border-radius: 10px;
+        }
+        .startScreen{
+            position: absolute;
+            background-color: #e72f2f;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            z-index: 1;
+            text-align: center;
+            border: 1px solid #ff6b6b;
+            padding: 15px;
+            margin: auto;
+            width: 50%;
+            cursor: pointer;
+            letter-spacing: 5;
+            font-size: 20px;
+            word-spacing: 3;
+            line-height: 30px;
+            text-transform: uppercase;
+            box-shadow: 0 5px 5px #777;
+			border-radius: 10px;
+        }
+        .level button {
+            padding: 7px;
+            font-size: 15px;
+			font-weight: bold;
+			text-transform: uppercase;
+            background: white;
+            border: 1px outset #000;
+            border-radius: 10px;
+            width: 100px;
+            box-shadow: 0 5px 5px #999;
+			cursor: pointer;			
+			outline: none; 
+            transition: 0.2s all;
+        }
+		.level button:hover{
+			background: #4bd236;
+		}		
+		.level button:active{
+			transform: scale(0.9);
+		}
+		
+        p{
+			padding-bottom: 10px;
+		}
+		
+#dirDown{
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+    left: 50px;
+    bottom: 0;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+}
+#dirLeft{
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+    left: 0;
+    bottom: 50px;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+}
+#dirRight{
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+    left: 100px;
+    bottom: 50px;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+}
+#dirUp{
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+    left: 50px;
+    bottom: 100px;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Racer</title> 
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="carGame">
+		<div class="score"></div>
+		
+        <div class="startScreen">
+            <p>Use arrow keys to avoid hitting other cars.<br>
+			Choose a difficulty to start:<br>
+            </p>
+			
+            <div><span class="level">
+				<button id="easy">Easy</button>
+				<button id="moderate">Medium</button>
+				<button id="difficult">Hard</button>
+                </span>
+            </div>		
+        </div>
+		  
+		<div class="gameArea"></div>
+		
+		<div class="dirPad">
+			<button id="dirUp" ontouchstart="moveUp()">&#8679;</button><br><br>
+			<button id="dirLeft" onclick="moveLeft()">&#8678;</button>
+			<button id="dirRight" onclick="moveRight()">&#8680;</button><br><br>
+			<button id="dirDown" onclick="moveDown()">&#8681;</button>
+		</div>
+		
+	</div>
+		
+    <script src="script.js"></script>
+</body>
+
+</html>
