@@ -18,6 +18,18 @@ let keys = {
     ArrowLeft: false,
     ArrowRight: false
 }
+let U = document.querySelector('.dirUp');
+let D = document.querySelector('.dirDown');
+let L = document.querySelector('.dirLeft');
+let R = document.querySelector('.dirRight');
+
+let tapHold = {
+	U: false,
+	D: false,
+	L: false,
+	R: false
+}
+
 let player = { speed: 7, score: 0 };
 level.addEventListener('click', (e)=> {
     player.speed = levelSpeed[e.target.id];
@@ -178,13 +190,10 @@ document.addEventListener('keydown', (e)=>{
     keys[e.key] = true;
 });
 document.addEventListener('pointerdown', (e)=>{
-	if (e.target.hasPointerCapture(e.pointerId)) {
-		e.target.releasePointerCapture(e.pointerId);
-	}
     e.preventDefault();
 	e.stopPropagation();
+    tapHold[e.key] = true;	
 });
-
 document.addEventListener('keyup', (e)=>{
     e.preventDefault();
     keys[e.key] = false;
@@ -192,21 +201,22 @@ document.addEventListener('keyup', (e)=>{
 document.addEventListener('pointerout', (e)=>{
     e.preventDefault();
 	e.stopPropagation();
+    tapHold[e.key] = false;	
 });
 
 function moveUp() {
-	if(player.y > (road.top + 70))
+	if(tapHold.U && player.y > (road.top + 70))
 		player.y -= player.speed;
 	}
 function moveDown() {
-	if(player.y < (road.bottom - 85))
+	if(tapHold.D && player.y < (road.bottom - 85))
 		player.y += player.speed;
 	}
 function moveLeft() {
-	if(player.x > 0)
+	if(tapHold.L && player.x > 0)
 		player.x -= player.speed;
 	}
 function moveRight() {
-	if(player.x < (road.width - 70))	
+	if(tapHold.R && player.x < (road.width - 70))	
 		player.x += player.speed;
 	}
