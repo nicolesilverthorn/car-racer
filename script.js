@@ -186,7 +186,7 @@ document.addEventListener('keydown', (e)=>{
 document.addEventListener('pointerdown', (e)=>{
     e.preventDefault();
 	//e.stopPropagation();
-    taps[e.pointer] = true;	
+    taps[e.key] = true;	
 });
 document.addEventListener('keyup', (e)=>{
     e.preventDefault();
@@ -195,7 +195,7 @@ document.addEventListener('keyup', (e)=>{
 document.addEventListener('pointerout', (e)=>{
     e.preventDefault();
 	//e.stopPropagation();
-    taps[e.pointer] = false;	
+    taps[e.key] = false;	
 });
 
 function moveUp() {
