@@ -124,7 +124,7 @@ function onGameOver() {
     gameStart.pause();
     gameOver.play();
     startScreen.classList.remove('hide');
-    startScreen.innerHTML = "Game Over!<br><br>Final score: <b>" + player.score + "</b><br><br>Click or tap here to restart";
+    startScreen.innerHTML = "Game Over!<br>Final score: <b>" + player.score + "</b><br><br>Click or tap here to restart";
 }
 
 function moveRoadLines(){
