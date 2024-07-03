@@ -124,7 +124,7 @@ function onGameOver() {
     gameStart.pause();
     gameOver.play();
     startScreen.classList.remove('hide');
-    startScreen.innerHTML = "Game Over!<br>Final score: <b>" + player.score + "</b><br>Click or tap here to restart";
+    startScreen.innerHTML = "Game Over!<br><br>Final score: <b>" + player.score + "</b><br><br>Click or tap here to restart";
 }
 
 function moveRoadLines(){
@@ -183,19 +183,19 @@ document.addEventListener('keydown', (e)=>{
     e.preventDefault();
     keys[e.key] = true;
 });
-document.addEventListener('pointerdown', (e)=>{
+document.addEventListener('touchstart', (e)=>{
     e.preventDefault();
 	//e.stopPropagation();
-    taps[e.key] = true;	
+    taps[e.touch] = true;	
 });
 document.addEventListener('keyup', (e)=>{
     e.preventDefault();
     keys[e.key] = false;
 });
-document.addEventListener('pointerout', (e)=>{
+document.addEventListener('touchend', (e)=>{
     e.preventDefault();
 	//e.stopPropagation();
-    taps[e.key] = false;	
+    taps[e.touch] = false;	
 });
 
 function moveUp() {
