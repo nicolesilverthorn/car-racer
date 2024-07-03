@@ -25,7 +25,7 @@ let player = { speed: 7, score: 0 };
 level.addEventListener('click', (e)=> {
     player.speed = levelSpeed[e.target.id];
 });
-level.addEventListener('pointerdown', (e)=> {
+level.addEventListener('touchstart', (e)=> {
     player.speed = levelSpeed[e.target.id];
 });
 
@@ -193,18 +193,22 @@ document.addEventListener('touchend', (e)=>{
 	tapHold = false;	
 });
 
+document.getElementById("dirUp").addEventListener("touchstart", moveUp, false);
 function moveUp() {
 	if(tapHold && player.y > (road.top + 70))
 		player.y -= player.speed;
 	}
+document.getElementById("dirDown").addEventListener("touchstart", moveDown, false);	
 function moveDown() {
 	if(tapHold && player.y < (road.bottom - 85))
 		player.y += player.speed;
 	}
+document.getElementById("dirLeft").addEventListener("touchstart", moveLeft, false);
 function moveLeft() {
 	if(tapHold && player.x > 0)
 		player.x -= player.speed;
 	}
+document.getElementById("dirRight").addEventListener("touchstart", moveRight, false);
 function moveRight() {
 	if(tapHold && player.x < (road.width - 70))	
 		player.x += player.speed;
