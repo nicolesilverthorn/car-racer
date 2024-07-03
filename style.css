@@ -113,10 +113,9 @@ p{
 }
 
 @media screen and (max-width: 680px), (max-height: 900px) {
-	/*
 	* {
 		touch-action: manipulation;
-	}*/
+	}
 	
 	.score{
 		right: 0;
@@ -184,7 +183,7 @@ p{
 		align-items: center;
 		position: absolute;
 		
-		left: calc(50% - 50px);
+		left: calc(50% - 54px);
 		bottom: 50px;
 		
 		width: 50px;
