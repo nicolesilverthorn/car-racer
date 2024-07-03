@@ -112,6 +112,10 @@ p{
 	padding-bottom: 10px;
 }
 
+#dirPad{
+	display: none;
+}
+
 @media screen and (max-width: 680px), (max-height: 900px) {
 	* {
 		touch-action: manipulation;
