@@ -9,7 +9,6 @@ let gameOver = new Audio();
 gameStart.src = "assets/audio/game_theme.mp3";
 gameOver.src = "assets/audio/gameOver_theme.mp3";
 
-
 const levelSpeed = {easy: 7, moderate: 10, difficult: 14};
 
 let keys = {
@@ -18,17 +17,11 @@ let keys = {
     ArrowLeft: false,
     ArrowRight: false
 }
-let U = document.querySelector('.dirUp');
-let D = document.querySelector('.dirDown');
-let L = document.querySelector('.dirLeft');
-let R = document.querySelector('.dirRight');
 
-let tapHold = {
-	U: false,
-	D: false,
-	L: false,
-	R: false
-}
+let U = false;
+let D = false;
+let L = false;
+let R = false;
 
 let player = { speed: 7, score: 0 };
 level.addEventListener('click', (e)=> {
@@ -130,7 +123,7 @@ function onGameOver() {
     gameStart.pause();
     gameOver.play();
     startScreen.classList.remove('hide');
-    startScreen.innerHTML = "Game Over!<br>Your final score is: <b>" + player.score + "</b><br>Click or tap here to restart";
+    startScreen.innerHTML = "Game Over!<br>Final score: <b>" + player.score + "</b><br>Click or tap here to restart";
 }
 
 function moveRoadLines(){
@@ -191,8 +184,11 @@ document.addEventListener('keydown', (e)=>{
 });
 document.addEventListener('pointerdown', (e)=>{
     e.preventDefault();
-	e.stopPropagation();
-    tapHold[e.key] = true;	
+	//e.stopPropagation();
+    U = true;	
+    D = true;	
+    L = true;	
+    R = true;	
 });
 document.addEventListener('keyup', (e)=>{
     e.preventDefault();
@@ -200,23 +196,26 @@ document.addEventListener('keyup', (e)=>{
 });
 document.addEventListener('pointerout', (e)=>{
     e.preventDefault();
-	e.stopPropagation();
-    tapHold[e.key] = false;	
+	//e.stopPropagation();
+    U = false;	
+    D = false;	
+    L = false;	
+    R = false;	
 });
 
 function moveUp() {
-	if(tapHold.U && player.y > (road.top + 70))
+	if(U && player.y > (road.top + 70))
 		player.y -= player.speed;
 	}
 function moveDown() {
-	if(tapHold.D && player.y < (road.bottom - 85))
+	if(D && player.y < (road.bottom - 85))
 		player.y += player.speed;
 	}
 function moveLeft() {
-	if(tapHold.L && player.x > 0)
+	if(L && player.x > 0)
 		player.x -= player.speed;
 	}
 function moveRight() {
-	if(tapHold.R && player.x < (road.width - 70))	
+	if(R && player.x < (road.width - 70))	
 		player.x += player.speed;
 	}
