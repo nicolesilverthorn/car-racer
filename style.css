@@ -112,6 +112,10 @@ p{
 	padding-bottom: 10px;
 }
 
+#dirPad{
+	display: none;
+}
+
 @media screen and (max-width: 680px), (max-height: 900px) {
 	* {
 		touch-action: manipulation;
@@ -129,7 +133,7 @@ p{
 	
 	.startScreen{
 		top: 35%;
-		left: 50%;
+		left: 52%;
 	}
 	
 	.carGame{
