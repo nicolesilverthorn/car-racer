@@ -17,11 +17,12 @@ let keys = {
     ArrowLeft: false,
     ArrowRight: false
 }
-
-let U = false;
-let D = false;
-let L = false;
-let R = false;
+let taps = {
+	U: false,
+	D: false,
+	L: false,
+	R: false
+}
 
 let player = { speed: 7, score: 0 };
 level.addEventListener('click', (e)=> {
@@ -185,10 +186,7 @@ document.addEventListener('keydown', (e)=>{
 document.addEventListener('pointerdown', (e)=>{
     e.preventDefault();
 	//e.stopPropagation();
-    U = true;	
-    D = true;	
-    L = true;	
-    R = true;	
+    taps[e.pointer] = true;	
 });
 document.addEventListener('keyup', (e)=>{
     e.preventDefault();
@@ -197,25 +195,22 @@ document.addEventListener('keyup', (e)=>{
 document.addEventListener('pointerout', (e)=>{
     e.preventDefault();
 	//e.stopPropagation();
-    U = false;	
-    D = false;	
-    L = false;	
-    R = false;	
+    taps[e.pointer] = false;	
 });
 
 function moveUp() {
-	if(U && player.y > (road.top + 70))
+	if(taps.U && player.y > (road.top + 70))
 		player.y -= player.speed;
 	}
 function moveDown() {
-	if(D && player.y < (road.bottom - 85))
+	if(taps.D && player.y < (road.bottom - 85))
 		player.y += player.speed;
 	}
 function moveLeft() {
-	if(L && player.x > 0)
+	if(taps.L && player.x > 0)
 		player.x -= player.speed;
 	}
 function moveRight() {
-	if(R && player.x < (road.width - 70))	
+	if(taps.R && player.x < (road.width - 70))	
 		player.x += player.speed;
 	}
