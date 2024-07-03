@@ -17,12 +17,9 @@ let keys = {
     ArrowLeft: false,
     ArrowRight: false
 }
-let taps = {
-	U: false,
-	D: false,
-	L: false,
-	R: false
-}
+
+let tapHold = false;
+
 
 let player = { speed: 7, score: 0 };
 level.addEventListener('click', (e)=> {
@@ -67,7 +64,7 @@ startScreen.addEventListener('click', () => {
         gameArea.appendChild(enemyCar);
     }
 });
-startScreen.addEventListener('pointerdown', () => {
+startScreen.addEventListener('touchstart', () => {
     startScreen.classList.add('hide');
     gameArea.innerHTML = "";
 
@@ -185,8 +182,7 @@ document.addEventListener('keydown', (e)=>{
 });
 document.addEventListener('touchstart', (e)=>{
     e.preventDefault();
-	//e.stopPropagation();
-    taps[e.touch] = true;	
+	tapHold = true;	
 });
 document.addEventListener('keyup', (e)=>{
     e.preventDefault();
@@ -194,23 +190,22 @@ document.addEventListener('keyup', (e)=>{
 });
 document.addEventListener('touchend', (e)=>{
     e.preventDefault();
-	//e.stopPropagation();
-    taps[e.touch] = false;	
+	tapHold = false;	
 });
 
 function moveUp() {
-	if(taps.U && player.y > (road.top + 70))
+	if(tapHold && player.y > (road.top + 70))
 		player.y -= player.speed;
 	}
 function moveDown() {
-	if(taps.D && player.y < (road.bottom - 85))
+	if(tapHold && player.y < (road.bottom - 85))
 		player.y += player.speed;
 	}
 function moveLeft() {
-	if(taps.L && player.x > 0)
+	if(tapHold && player.x > 0)
 		player.x -= player.speed;
 	}
 function moveRight() {
-	if(taps.R && player.x < (road.width - 70))	
+	if(tapHold && player.x < (road.width - 70))	
 		player.x += player.speed;
 	}
