@@ -121,6 +121,10 @@ p{
 		touch-action: manipulation;
 	}
 	
+	#dirPad{
+		display: block;
+	}
+	
 	.score{
 		right: 0;
 		z-index: 99;
