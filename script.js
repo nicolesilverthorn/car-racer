@@ -178,6 +178,9 @@ document.addEventListener('keydown', (e)=>{
     keys[e.key] = true;
 });
 document.addEventListener('pointerdown', (e)=>{
+	if (e.target.hasPointerCapture(e.pointerId)) {
+		e.target.releasePointerCapture(e.pointerId);
+	}
     e.preventDefault();
 	e.stopPropagation();
 });
@@ -190,15 +193,7 @@ document.addEventListener('pointerout', (e)=>{
     e.preventDefault();
 	e.stopPropagation();
 });
-/*
-$(function(){
-	$('button.dirUp').bind('taphold', moveUp);
-	$('button.dirDown').bind('taphold', moveDown);
-	$('button.dirLeft').bind('taphold', moveLeft);
-	$('button.dirRight').bind('taphold', moveRight);
-	}
-});
-*/
+
 function moveUp() {
 	if(player.y > (road.top + 70))
 		player.y -= player.speed;
