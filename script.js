@@ -25,7 +25,7 @@ let player = { speed: 7, score: 0 };
 level.addEventListener('click', (e)=> {
     player.speed = levelSpeed[e.target.id];
 });
-level.addEventListener('touchstart', (e)=> {
+level.addEventListener('pointerdown', (e)=> {
     player.speed = levelSpeed[e.target.id];
 });
 
@@ -64,7 +64,7 @@ startScreen.addEventListener('click', () => {
         gameArea.appendChild(enemyCar);
     }
 });
-startScreen.addEventListener('touchstart', () => {
+startScreen.addEventListener('pointerdown', () => {
     startScreen.classList.add('hide');
     gameArea.innerHTML = "";
 
@@ -180,7 +180,7 @@ document.addEventListener('keydown', (e)=>{
     e.preventDefault();
     keys[e.key] = true;
 });
-document.addEventListener('touchstart', (e)=>{
+document.addEventListener('pointerdown', (e)=>{
     e.preventDefault();
 	tapHold = true;	
 });
@@ -188,27 +188,27 @@ document.addEventListener('keyup', (e)=>{
     e.preventDefault();
     keys[e.key] = false;
 });
-document.addEventListener('touchend', (e)=>{
+document.addEventListener('pointerout', (e)=>{
     e.preventDefault();
 	tapHold = false;	
 });
 
-document.getElementById("dirUp").addEventListener("touchstart", moveUp, false);
+document.getElementById("dirUp").addEventListener("pointerdown", moveUp, false);
 function moveUp() {
 	if(tapHold && player.y > (road.top + 70))
 		player.y -= player.speed;
 	}
-document.getElementById("dirDown").addEventListener("touchstart", moveDown, false);	
+document.getElementById("dirDown").addEventListener("pointerdown", moveDown, false);	
 function moveDown() {
 	if(tapHold && player.y < (road.bottom - 85))
 		player.y += player.speed;
 	}
-document.getElementById("dirLeft").addEventListener("touchstart", moveLeft, false);
+document.getElementById("dirLeft").addEventListener("pointerdown", moveLeft, false);
 function moveLeft() {
 	if(tapHold && player.x > 0)
 		player.x -= player.speed;
 	}
-document.getElementById("dirRight").addEventListener("touchstart", moveRight, false);
+document.getElementById("dirRight").addEventListener("pointerdown", moveRight, false);
 function moveRight() {
 	if(tapHold && player.x < (road.width - 70))	
 		player.x += player.speed;

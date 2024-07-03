@@ -133,7 +133,7 @@ p{
 	
 	.startScreen{
 		top: 35%;
-		left: calc(50% + 5px);
+		left: calc(50% + 10px);
 	}
 	
 	.carGame{
