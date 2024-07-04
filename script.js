@@ -17,8 +17,13 @@ let keys = {
     ArrowLeft: false,
     ArrowRight: false
 }
-
-let tapHold = false;
+//let tapHold = false;
+let held = {
+	u: false,
+	d: false,
+	l: false,
+	r: false
+}
 
 
 let player = { speed: 7, score: 0 };
@@ -172,44 +177,46 @@ function gamePlay() {
 
         player.score++;
         const ps = player.score - 1;
-        score.innerHTML = 'Score: ' + ps;          
-    }
+        score.innerHTML = 'Score: ' + ps;  
+
+        document.addEventListener('keydown', (e)=>{
+			e.preventDefault();
+			keys[e.key] = true;
+		});
+		document.addEventListener('pointerdown', (e)=>{
+			e.preventDefault();
+			//tapHold = true;	
+			held[e.touches] = true;
+		});
+		document.addEventListener('keyup', (e)=>{
+			e.preventDefault();
+			keys[e.key] = false;
+		});
+		document.addEventListener('pointerout', (e)=>{
+			e.preventDefault();
+			//tapHold = false;
+			held[e.touches] = false;
+		});
+		document.getElementById("dirUp").addEventListener("pointerdown", moveUp);			
+		document.getElementById("dirDown").addEventListener("pointerdown", moveDown);	
+		document.getElementById("dirLeft").addEventListener("pointerdown", moveLeft);
+		document.getElementById("dirRight").addEventListener("pointerdown", moveRight);
+	}
 }
 
-document.addEventListener('keydown', (e)=>{
-    e.preventDefault();
-    keys[e.key] = true;
-});
-document.addEventListener('pointerdown', (e)=>{
-    e.preventDefault();
-	tapHold = true;	
-});
-document.addEventListener('keyup', (e)=>{
-    e.preventDefault();
-    keys[e.key] = false;
-});
-document.addEventListener('pointerout', (e)=>{
-    e.preventDefault();
-	tapHold = false;	
-});
-
-document.getElementById("dirUp").addEventListener("pointerdown", moveUp, false);
-function moveUp() {
-	if(tapHold && player.y > (road.top + 70))
+function moveUp(){
+	if(held.u && player.y > (road.top + 70))
 		player.y -= player.speed;
 	}
-document.getElementById("dirDown").addEventListener("pointerdown", moveDown, false);	
-function moveDown() {
-	if(tapHold && player.y < (road.bottom - 85))
+function moveDown(){
+	if(held.d && player.y < (road.bottom - 85))
 		player.y += player.speed;
 	}
-document.getElementById("dirLeft").addEventListener("pointerdown", moveLeft, false);
-function moveLeft() {
-	if(tapHold && player.x > 0)
+function moveLeft(){
+	if(held.l && player.x > 0)
 		player.x -= player.speed;
 	}
-document.getElementById("dirRight").addEventListener("pointerdown", moveRight, false);
-function moveRight() {
-	if(tapHold && player.x < (road.width - 70))	
+function moveRight(){
+	if(held.r && player.x < (road.width - 70))	
 		player.x += player.speed;
 	}
