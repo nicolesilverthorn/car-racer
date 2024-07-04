@@ -24,7 +24,7 @@ let player = { speed: 7, score: 0 };
 level.addEventListener('click', (e)=> {
     player.speed = levelSpeed[e.target.id];
 });
-level.addEventListener('pointerdown', (e)=> {
+level.addEventListener('touchstart', (e)=> {
     player.speed = levelSpeed[e.target.id];
 });
 
@@ -63,7 +63,7 @@ startScreen.addEventListener('click', () => {
         gameArea.appendChild(enemyCar);
     }
 });
-startScreen.addEventListener('pointerdown', () => {
+startScreen.addEventListener('touchstart', () => {
     startScreen.classList.add('hide');
     gameArea.innerHTML = "";
 
@@ -177,7 +177,7 @@ function gamePlay() {
 			e.preventDefault();
 			keys[e.key] = true;
 		});
-		document.addEventListener('pointerdown', (e)=>{
+		document.addEventListener('touchstart', (e)=>{
 			//e.preventDefault();
 			tapHold = true;
 		});
@@ -185,17 +185,17 @@ function gamePlay() {
 			e.preventDefault();
 			keys[e.key] = false;
 		});
-		document.addEventListener('pointerout', (e)=>{
+		document.addEventListener('touchend', (e)=>{
 			//e.preventDefault();
 			tapHold = false;
 		});
 	}
 }
 
-document.getElementById("dirUp").addEventListener("pointerdown", moveUp);			
-document.getElementById("dirDown").addEventListener("pointerdown", moveDown);	
-document.getElementById("dirLeft").addEventListener("pointerdown", moveLeft);
-document.getElementById("dirRight").addEventListener("pointerdown", moveRight);
+document.getElementById("dirUp").addEventListener("touchstart", moveUp);			
+document.getElementById("dirDown").addEventListener("touchstart", moveDown);	
+document.getElementById("dirLeft").addEventListener("touchstart", moveLeft);
+document.getElementById("dirRight").addEventListener("touchstart", moveRight);
 
 function moveUp(){
 	if(tapHold && player.y > (road.top + 70))
