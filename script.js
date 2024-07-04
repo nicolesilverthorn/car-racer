@@ -186,7 +186,7 @@ function gamePlay() {
 		document.addEventListener('pointerdown', (e)=>{
 			e.preventDefault();
 			//tapHold = true;	
-			held[e.touches] = true;
+			held[e.target.id] = true;
 		});
 		document.addEventListener('keyup', (e)=>{
 			e.preventDefault();
@@ -195,7 +195,7 @@ function gamePlay() {
 		document.addEventListener('pointerout', (e)=>{
 			e.preventDefault();
 			//tapHold = false;
-			held[e.touches] = false;
+			held[e.target.id] = false;
 		});
 		document.getElementById("dirUp").addEventListener("pointerdown", moveUp);			
 		document.getElementById("dirDown").addEventListener("pointerdown", moveDown);	
