@@ -178,7 +178,7 @@ function gamePlay() {
 			keys[e.key] = true;
 		});
 		document.addEventListener('pointerdown', (e)=>{
-			e.preventDefault();
+			//e.preventDefault();
 			tapHold = true;
 		});
 		document.addEventListener('keyup', (e)=>{
@@ -186,7 +186,7 @@ function gamePlay() {
 			keys[e.key] = false;
 		});
 		document.addEventListener('pointerout', (e)=>{
-			e.preventDefault();
+			//e.preventDefault();
 			tapHold = false;
 		});
 	}
