@@ -189,12 +189,13 @@ function gamePlay() {
 			e.preventDefault();
 			tapHold = false;
 		});
-		document.getElementById("dirUp").addEventListener("pointerdown", moveUp);			
-		document.getElementById("dirDown").addEventListener("pointerdown", moveDown);	
-		document.getElementById("dirLeft").addEventListener("pointerdown", moveLeft);
-		document.getElementById("dirRight").addEventListener("pointerdown", moveRight);
 	}
 }
+
+document.getElementById("dirUp").addEventListener("pointerdown", moveUp);			
+document.getElementById("dirDown").addEventListener("pointerdown", moveDown);	
+document.getElementById("dirLeft").addEventListener("pointerdown", moveLeft);
+document.getElementById("dirRight").addEventListener("pointerdown", moveRight);
 
 function moveUp(){
 	if(tapHold && player.y > (road.top + 70))
