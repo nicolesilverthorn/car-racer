@@ -178,7 +178,7 @@ function gamePlay() {
 			keys[e.key] = true;
 		});
 		document.addEventListener('touchstart', (e)=>{
-			//e.preventDefault();
+			e.preventDefault();
 			tapHold = true;
 		});
 		document.addEventListener('keyup', (e)=>{
@@ -186,7 +186,7 @@ function gamePlay() {
 			keys[e.key] = false;
 		});
 		document.addEventListener('touchend', (e)=>{
-			//e.preventDefault();
+			e.preventDefault();
 			tapHold = false;
 		});
 	}
@@ -198,18 +198,30 @@ document.getElementById("dirLeft").addEventListener("touchstart", moveLeft);
 document.getElementById("dirRight").addEventListener("touchstart", moveRight);
 
 function moveUp(){
-	if(tapHold && player.y > (road.top + 70))
-		player.y -= player.speed;
+	if(player.start){
+		if(tapHold && player.y > (road.top + 70)){
+			player.y -= player.speed;
+		}
 	}
+}
 function moveDown(){
-	if(tapHold && player.y < (road.bottom - 85))
-		player.y += player.speed;
+	if(player.start){
+		if(tapHold && player.y < (road.bottom - 85)){
+				player.y += player.speed;
+		}
 	}
+}
 function moveLeft(){
-	if(tapHold && player.x > 0)
-		player.x -= player.speed;
+	if(player.start){
+		if(tapHold && player.x > 0){
+			player.x -= player.speed;
+		}
 	}
+}
 function moveRight(){
-	if(tapHold && player.x < (road.width - 70))	
-		player.x += player.speed;
+	if(player.start){
+		if(tapHold && player.x < (road.width - 70)){
+			player.x += player.speed;
+		}
 	}
+}
