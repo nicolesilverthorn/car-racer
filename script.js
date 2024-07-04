@@ -197,6 +197,11 @@ document.getElementById("dirDown").addEventListener("touchstart", moveDown);
 document.getElementById("dirLeft").addEventListener("touchstart", moveLeft);
 document.getElementById("dirRight").addEventListener("touchstart", moveRight);
 
+document.getElementById("dirUp").addEventListener("click", moveUp);			
+document.getElementById("dirDown").addEventListener("click", moveDown);	
+document.getElementById("dirLeft").addEventListener("click", moveLeft);
+document.getElementById("dirRight").addEventListener("click", moveRight);
+
 function moveUp(){
 	if(player.start){
 		if(tapHold && player.y > (road.top + 70)){
