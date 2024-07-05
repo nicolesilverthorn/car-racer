@@ -18,12 +18,7 @@ let keys = {
     ArrowRight: false
 }
 
-let tapHold = {
-	uBtn: false,
-	dBtn: false,
-	lBtn: false,
-	rBtn: false
-}
+let tapHold = false;
 
 const uBtn = document.getElementById("dirUp");
 const dBtn = document.getElementById("dirDown");
@@ -189,7 +184,7 @@ function gamePlay() {
 		});
 		document.addEventListener('touchstart', (e)=>{
 			e.preventDefault();
-			tapHold[e.target.id] = true;
+			tapHold = true;
 		});
 		document.addEventListener('keyup', (e)=>{
 			e.preventDefault();
@@ -197,13 +192,13 @@ function gamePlay() {
 		});
 		document.addEventListener('touchend', (e)=>{
 			e.preventDefault();
-			tapHold[e.target.id] = true;
+			tapHold = false;
 		});
-
-uBtn.addEventListener("touchstart", (e)=>{if(tapHold.uBtn && player.y > (road.top + 70)) player.y -= player.speed;});			
-dBtn.addEventListener("touchstart", (e)=>{if(tapHold.dBtn && player.y < (road.bottom - 85)) player.y += player.speed;});	
-lBtn.addEventListener("touchstart", (e)=>{if(tapHold.lBtn && player.x > 0) player.x -= player.speed;});
-rBtn.addEventListener("touchstart", (e)=>{if(tapHold.rBtn && player.x < (road.width - 70)) player.x += player.speed;});
-		
+		if(tapHold){
+uBtn.addEventListener("touchstart", (e)=>{if(/*tapHold && */player.y > (road.top + 70)) player.y -= player.speed;});			
+dBtn.addEventListener("touchstart", (e)=>{if(/*tapHold && */player.y < (road.bottom - 85)) player.y += player.speed;});	
+lBtn.addEventListener("touchstart", (e)=>{if(/*tapHold && */player.x > 0) player.x -= player.speed;});
+rBtn.addEventListener("touchstart", (e)=>{if(/*tapHold && */player.x < (road.width - 70)) player.x += player.speed;});
+		}
 	}
 }
