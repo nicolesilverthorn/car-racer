@@ -194,41 +194,10 @@ function gamePlay() {
 			e.preventDefault();
 			tapHold = false;
 		});
-uBtn.addEventListener("touchstart", moveUp);			
-dBtn.addEventListener("touchstart", moveDown);	
-lBtn.addEventListener("touchstart", moveLeft);
-rBtn.addEventListener("touchstart", moveRight);
+uBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.y > (road.top + 70)) player.y -= player.speed;});			
+dBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.y < (road.bottom - 85)) player.y += player.speed;});	
+lBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.x > 0) player.x -= player.speed;});
+rBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.x < (road.width - 70)) player.x += player.speed;});
 		
-	}
-}
-
-
-
-function moveUp(){
-	if(player.start){
-		if(tapHold && player.y > (road.top + 70)){
-			player.y -= player.speed;
-		}
-	}
-}
-function moveDown(){
-	if(player.start){
-		if(tapHold && player.y < (road.bottom - 85)){
-				player.y += player.speed;
-		}
-	}
-}
-function moveLeft(){
-	if(player.start){
-		if(tapHold && player.x > 0){
-			player.x -= player.speed;
-		}
-	}
-}
-function moveRight(){
-	if(player.start){
-		if(tapHold && player.x < (road.width - 70)){
-			player.x += player.speed;
-		}
 	}
 }
