@@ -20,6 +20,11 @@ let keys = {
 
 let tapHold = false;
 
+const uBtn = document.getElementById("dirUp");
+const dBtn = document.getElementById("dirDown");
+const lBtn = document.getElementById("dirLeft");
+const rBtn = document.getElementById("dirRight");
+
 let player = { speed: 7, score: 0 };
 level.addEventListener('click', (e)=> {
     player.speed = levelSpeed[e.target.id];
@@ -189,18 +194,15 @@ function gamePlay() {
 			e.preventDefault();
 			tapHold = false;
 		});
+uBtn.addEventListener("touchstart", moveUp);			
+dBtn.addEventListener("touchstart", moveDown);	
+lBtn.addEventListener("touchstart", moveLeft);
+rBtn.addEventListener("touchstart", moveRight);
+		
 	}
 }
 
-document.getElementById("dirUp").addEventListener("touchstart", moveUp);			
-document.getElementById("dirDown").addEventListener("touchstart", moveDown);	
-document.getElementById("dirLeft").addEventListener("touchstart", moveLeft);
-document.getElementById("dirRight").addEventListener("touchstart", moveRight);
 
-document.getElementById("dirUp").addEventListener("click", moveUp);			
-document.getElementById("dirDown").addEventListener("click", moveDown);	
-document.getElementById("dirLeft").addEventListener("click", moveLeft);
-document.getElementById("dirRight").addEventListener("click", moveRight);
 
 function moveUp(){
 	if(player.start){
