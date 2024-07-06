@@ -184,21 +184,23 @@ function gamePlay() {
 		});
 		document.addEventListener('touchstart', (e)=>{
 			e.preventDefault();
-			if(e.target.id == 'dirPad'){
+			if(e.target == uBtn || dBtn || rBtn || lBtn){
 				tapHold = true;
 			}
 		});
+		
 		document.addEventListener('keyup', (e)=>{
 			e.preventDefault();
 			keys[e.key] = false;
 		});
 		document.addEventListener('touchend', (e)=>{
 			e.preventDefault();
-			if(e.target.id == 'dirPad'){
+			if(e.target == uBtn || dBtn || rBtn || lBtn){
 				tapHold = false;
 			}
 		});
-		
+			
+	
 uBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.y > (road.top + 70)) player.y -= 0.1;});			
 dBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.y < (road.bottom - 85)) player.y += 0.1;});	
 lBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.x > 0) player.x -= 0.1;});
