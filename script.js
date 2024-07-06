@@ -184,7 +184,7 @@ function gamePlay() {
 		});
 		document.addEventListener('touchstart', (e)=>{
 			e.preventDefault();
-			if(e.target.id === 'dirPad'){
+			if(e.target.id == 'dirPad'){
 				tapHold = true;
 			}
 		});
@@ -194,7 +194,7 @@ function gamePlay() {
 		});
 		document.addEventListener('touchend', (e)=>{
 			e.preventDefault();
-			if(e.target.id === 'dirPad'){
+			if(e.target.id == 'dirPad'){
 				tapHold = false;
 			}
 		});
