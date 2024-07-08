@@ -185,9 +185,10 @@ function gamePlay() {
 		document.addEventListener('touchstart', (e)=>{
 			e.preventDefault();
 			e.stopPropagation();
-			tapHold = true;
+			setTimeout(function() {
+				tapHold = true; 
+			}, 5000);		
 		});
-		
 		document.addEventListener('keyup', (e)=>{
 			e.preventDefault();
 			keys[e.key] = false;
@@ -195,13 +196,15 @@ function gamePlay() {
 		document.addEventListener('touchend', (e)=>{
 			e.preventDefault();
 			e.stopPropagation();
-			tapHold = false;
+			setTimeout(function() {
+				tapHold = false; 
+			}, 5000);
 		});
 				
-uBtn.addEventListener("touchstart", (e)=>{if(/*tapHold && */player.y > (road.top + 70)) player.y -= 0.1;});			
-dBtn.addEventListener("touchstart", (e)=>{if(/*tapHold && */player.y < (road.bottom - 85)) player.y += 0.1;});	
-lBtn.addEventListener("touchstart", (e)=>{if(/*tapHold && */player.x > 0) player.x -= 0.1;});
-rBtn.addEventListener("touchstart", (e)=>{if(/*tapHold && */player.x < (road.width - 70)) player.x += 0.1;});
+uBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.y > (road.top + 70)) player.y -= 0.1;});			
+dBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.y < (road.bottom - 85)) player.y += 0.1;});	
+lBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.x > 0) player.x -= 0.1;});
+rBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.x < (road.width - 70)) player.x += 0.1;});
 		
 	}
 }
