@@ -184,7 +184,8 @@ function gamePlay() {
 		});
 		document.addEventListener('touchstart', (e)=>{
 			e.preventDefault();
-			if(e.target == uBtn || dBtn || rBtn || lBtn){
+			e.stopPropagation();
+			if(e.target === uBtn || dBtn || rBtn || lBtn){
 				tapHold = true;
 			}
 		});
@@ -195,7 +196,8 @@ function gamePlay() {
 		});
 		document.addEventListener('touchend', (e)=>{
 			e.preventDefault();
-			if(e.target == uBtn || dBtn || rBtn || lBtn){
+			e.stopPropagation();
+			if(e.target === uBtn || dBtn || rBtn || lBtn){
 				tapHold = false;
 			}
 		});
