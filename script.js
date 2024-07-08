@@ -196,9 +196,9 @@ function gamePlay() {
 		document.addEventListener('touchend', (e)=>{
 			e.preventDefault();
 			e.stopPropagation();
-			setTimeout(function() {
+			clearTimeout(function() {
 				tapHold = false; 
-			}, 5000);
+			};
 		});
 				
 uBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.y > (road.top + 70)) player.y -= 0.1;});			
