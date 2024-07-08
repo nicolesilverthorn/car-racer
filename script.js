@@ -187,7 +187,7 @@ function gamePlay() {
 			e.stopPropagation();
 			/*setTimeout(function() {
 				tapHold = true; 
-			}, 5000);*/		
+			}, 1000);*/		
 		});
 		document.addEventListener('keyup', (e)=>{
 			e.preventDefault();
