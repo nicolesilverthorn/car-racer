@@ -185,9 +185,9 @@ function gamePlay() {
 		document.addEventListener('touchstart', (e)=>{
 			e.preventDefault();
 			e.stopPropagation();
-			if(e.target === uBtn || dBtn || rBtn || lBtn){
+			//if(e.target === uBtn || dBtn || rBtn || lBtn){
 				tapHold = true;
-			}
+			//}
 		});
 		
 		document.addEventListener('keyup', (e)=>{
@@ -197,9 +197,9 @@ function gamePlay() {
 		document.addEventListener('touchend', (e)=>{
 			e.preventDefault();
 			e.stopPropagation();
-			if(e.target === uBtn || dBtn || rBtn || lBtn){
+			//if(e.target === uBtn || dBtn || rBtn || lBtn){
 				tapHold = false;
-			}
+			//}
 		});
 			
 	
