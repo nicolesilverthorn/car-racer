@@ -72,7 +72,7 @@
 	color: white;
 	z-index: 1;
 	text-align: center;
-	border: 1px solid cyan;
+	border: 1px outset cyan;
 	padding: 15px;
 	margin: auto;
 	width: 50%;
@@ -112,17 +112,18 @@ p{
 	padding-bottom: 10px;
 }
 
-#dirPad{
-	
+.mobileOnly{
+	display: none;
 }
 
 @media screen and (max-width: 680px), (max-height: 900px) {
 	* {
 		touch-action: manipulation;
+		-webkit-touch-callout: none !important;
 	}
 	
-	#dirPad{
-		
+	.mobileOnly{
+		display: block;
 	}
 	
 	.score{
