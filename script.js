@@ -208,10 +208,10 @@ function gamePlay() {
 			tapHold[e.target.id] = false;
 		});
 		
-/*uBtn.addEventListener("touchstart", (e)=>{*/if(tapHold.u && player.y > (road.top + 70)) player.y -= 0.1;/*}*/);			
-/*dBtn.addEventListener("touchstart", (e)=>{*/if(tapHold.d && player.y < (road.bottom - 85)) player.y += 0.1;/*}*/);	
-/*lBtn.addEventListener("touchstart", (e)=>{*/if(tapHold.l && player.x > 0) player.x -= 0.1;/*}*/);
-/*rBtn.addEventListener("touchstart", (e)=>{*/if(tapHold.r && player.x < (road.width - 70)) player.x += 0.1;/*}*/);
+document.addEventListener("touchstart", (e)=>{if(tapHold.u && player.y > (road.top + 70)) player.y -= 0.1;});			
+document.addEventListener("touchstart", (e)=>{if(tapHold.d && player.y < (road.bottom - 85)) player.y += 0.1;});	
+document.addEventListener("touchstart", (e)=>{if(tapHold.l && player.x > 0) player.x -= 0.1;});
+document.addEventListener("touchstart", (e)=>{if(tapHold.r && player.x < (road.width - 70)) player.x += 0.1;});
 		
 	}
 }
