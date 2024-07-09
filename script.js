@@ -14,25 +14,29 @@ const levelSpeed = {
 	moderate: 10, 
 	difficult: 14
 };
+let player = { 
+	speed: 7, 
+	score: 0 
+};
 let keys = {
     ArrowUp: false,
     ArrowDown: false,
     ArrowLeft: false,
     ArrowRight: false
-}
+};
 let tapHold = {
 	u: false,
 	d: false,
 	l: false, 
 	r: false
-}
+};
 
 const uBtn = document.getElementById("dirUp");
 const dBtn = document.getElementById("dirDown");
 const lBtn = document.getElementById("dirLeft");
 const rBtn = document.getElementById("dirRight");
 
-let player = { speed: 7, score: 0 };
+
 level.addEventListener('click', (e)=> {
     player.speed = levelSpeed[e.target.id];
 });
@@ -188,7 +192,6 @@ function gamePlay() {
         document.addEventListener('keydown', (e)=>{
 			e.preventDefault();
 			keys[e.key] = true;
-			//tapHold[e.target.id] = true;
 		});
 		document.addEventListener('touchstart', (e)=>{
 			e.preventDefault();
@@ -198,18 +201,17 @@ function gamePlay() {
 		document.addEventListener('keyup', (e)=>{
 			e.preventDefault();
 			keys[e.key] = false;
-			//tapHold[e.target.id] = false;
 		});
 		document.addEventListener('touchend', (e)=>{
 			e.preventDefault();
 			e.stopPropagation();
 			tapHold[e.target.id] = false;
 		});
-	//console.log(tapHold);			
-uBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.y > (road.top + 70)) player.y -= 0.1;});			
-dBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.y < (road.bottom - 85)) player.y += 0.1;});	
-lBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.x > 0) player.x -= 0.1;});
-rBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.x < (road.width - 70)) player.x += 0.1;});
+		
+/*uBtn.addEventListener("touchstart", (e)=>{*/if(tapHold.u && player.y > (road.top + 70)) player.y -= 0.1;/*}*/);			
+/*dBtn.addEventListener("touchstart", (e)=>{*/if(tapHold.d && player.y < (road.bottom - 85)) player.y += 0.1;/*}*/);	
+/*lBtn.addEventListener("touchstart", (e)=>{*/if(tapHold.l && player.x > 0) player.x -= 0.1;/*}*/);
+/*rBtn.addEventListener("touchstart", (e)=>{*/if(tapHold.r && player.x < (road.width - 70)) player.x += 0.1;/*}*/);
 		
 	}
 }
