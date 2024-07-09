@@ -9,16 +9,23 @@ let gameOver = new Audio();
 gameStart.src = "assets/audio/game_theme.mp3";
 gameOver.src = "assets/audio/gameOver_theme.mp3";
 
-const levelSpeed = {easy: 7, moderate: 10, difficult: 14};
-
+const levelSpeed = {
+	easy: 7, 
+	moderate: 10, 
+	difficult: 14
+};
 let keys = {
     ArrowUp: false,
     ArrowDown: false,
     ArrowLeft: false,
     ArrowRight: false
 }
-
-let tapHold = false;
+let tapHold = {
+	u: false,
+	d: false,
+	l: false, 
+	r: false
+}
 
 const uBtn = document.getElementById("dirUp");
 const dBtn = document.getElementById("dirDown");
@@ -185,9 +192,7 @@ function gamePlay() {
 		document.addEventListener('touchstart', (e)=>{
 			e.preventDefault();
 			e.stopPropagation();
-			/*setTimeout(function() {
-				tapHold = true; 
-			}, 1000);*/		
+			tapHold[e.target.id] = true;
 		});
 		document.addEventListener('keyup', (e)=>{
 			e.preventDefault();
@@ -196,15 +201,13 @@ function gamePlay() {
 		document.addEventListener('touchend', (e)=>{
 			e.preventDefault();
 			e.stopPropagation();
-			/*clearTimeout(function() {
-				tapHold = false; 
-			};*/
+			tapHold[e.target.id] = false;
 		});
 				
-uBtn.addEventListener("touchstart", (e)=>{if(/*tapHold && */player.y > (road.top + 70)) player.y -= 0.1;});			
-dBtn.addEventListener("touchstart", (e)=>{if(/*tapHold && */player.y < (road.bottom - 85)) player.y += 0.1;});	
-lBtn.addEventListener("touchstart", (e)=>{if(/*tapHold && */player.x > 0) player.x -= 0.1;});
-rBtn.addEventListener("touchstart", (e)=>{if(/*tapHold && */player.x < (road.width - 70)) player.x += 0.1;});
+uBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.y > (road.top + 70)) player.y -= 0.1;});			
+dBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.y < (road.bottom - 85)) player.y += 0.1;});	
+lBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.x > 0) player.x -= 0.1;});
+rBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.x < (road.width - 70)) player.x += 0.1;});
 		
 	}
 }
