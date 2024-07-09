@@ -188,6 +188,7 @@ function gamePlay() {
         document.addEventListener('keydown', (e)=>{
 			e.preventDefault();
 			keys[e.key] = true;
+			//tapHold[e.target.id] = true;
 		});
 		document.addEventListener('touchstart', (e)=>{
 			e.preventDefault();
@@ -197,13 +198,14 @@ function gamePlay() {
 		document.addEventListener('keyup', (e)=>{
 			e.preventDefault();
 			keys[e.key] = false;
+			//tapHold[e.target.id] = false;
 		});
 		document.addEventListener('touchend', (e)=>{
 			e.preventDefault();
 			e.stopPropagation();
 			tapHold[e.target.id] = false;
 		});
-				
+	//console.log(tapHold);			
 uBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.y > (road.top + 70)) player.y -= 0.1;});			
 dBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.y < (road.bottom - 85)) player.y += 0.1;});	
 lBtn.addEventListener("touchstart", (e)=>{if(tapHold && player.x > 0) player.x -= 0.1;});
