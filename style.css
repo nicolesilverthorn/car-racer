@@ -112,17 +112,16 @@ p{
 	padding-bottom: 10px;
 }
 
-.mobileOnly{
-	display: none;
+.dirPad{
+	display: none !important;
 }
 
-@media screen and (max-width: 680px), (max-height: 900px) {
+@media screen and (max-width: 490px), (max-height: 900px) {
 	* {
-		touch-action: manipulation;
 		-webkit-touch-callout: none !important;
 	}
 	
-	.mobileOnly{
+	.dirPad{
 		display: block;
 	}
 	
@@ -155,7 +154,7 @@ p{
 		justify-content: center;
 		align-items: center;
 		position: absolute;
-		left: calc(50% - 14px);
+		left: calc(50% - 25px);
 		bottom: 100px;
 		width: 50px;
 		height: 50px;
@@ -172,7 +171,7 @@ p{
 		justify-content: center;
 		align-items: center;
 		position: absolute;
-		left: calc(50% - 14px);
+		left: calc(50% - 25px);
 		bottom: 0;
 		width: 50px;
 		height: 50px;
@@ -189,7 +188,7 @@ p{
 		justify-content: center;
 		align-items: center;
 		position: absolute;
-		left: calc(50% - 63px);
+		left: calc(50% - 75px);
 		bottom: 50px;		
 		width: 50px;
 		height: 50px;
@@ -206,7 +205,7 @@ p{
 		justify-content: center;
 		align-items: center;
 		position: absolute;
-		left: calc(50% + 35px);
+		left: calc(50% + 25px);
 		bottom: 50px;		
 		width: 50px;
 		height: 50px;
