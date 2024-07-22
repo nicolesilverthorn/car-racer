@@ -191,7 +191,7 @@ function gamePlay() {
 		document.addEventListener('touchstart', (e)=>{
 			e.preventDefault();
 			e.stopPropagation();
-			tapHold[e.target.id] = true;
+			tapHold[e.target] = true;
 			tapHold.u = true;
 			tapHold.d = true;
 			tapHold.l = true;
@@ -204,7 +204,7 @@ function gamePlay() {
 		document.addEventListener('touchend', (e)=>{
 			e.preventDefault();
 			e.stopPropagation();
-			tapHold[e.target.id] = false;
+			tapHold[e.target] = false;
 			tapHold.u = false;
 			tapHold.d = false;
 			tapHold.l = false;
