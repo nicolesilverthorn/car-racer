@@ -2,7 +2,6 @@ const score = document.querySelector('.score');
 const startScreen = document.querySelector('.startScreen');
 const gameArea = document.querySelector('.gameArea');
 const level = document.querySelector('.level');
-//const dirPad = document.querySelector('.dirPad');
 
 let gameStart = new Audio();
 let gameOver = new Audio();
@@ -26,10 +25,10 @@ let keys = {
     ArrowRight: false
 };
 let tapHold = {
-	u: false,
-	d: false,
-	l: false, 
-	r: false
+	dirUp: false,
+	dirDown: false,
+	dirLeft: false, 
+	dirRight: false
 };
 
 level.addEventListener('click', (e)=> {
@@ -191,11 +190,11 @@ function gamePlay() {
 		document.addEventListener('touchstart', (e)=>{
 			e.preventDefault();
 			e.stopPropagation();
-			tapHold[e.target] = true;
-			tapHold.u = true;
-			tapHold.d = true;
-			tapHold.l = true;
-			tapHold.r = true;
+			tapHold[e.target.id] = true;
+			tapHold.dirUp = true;
+			tapHold.dirDown = true;
+			tapHold.dirLeft = true;
+			tapHold.dirRight = true;
 		});
 		document.addEventListener('keyup', (e)=>{
 			e.preventDefault();
@@ -204,17 +203,17 @@ function gamePlay() {
 		document.addEventListener('touchend', (e)=>{
 			e.preventDefault();
 			e.stopPropagation();
-			tapHold[e.target] = false;
-			tapHold.u = false;
-			tapHold.d = false;
-			tapHold.l = false;
-			tapHold.r = false;
+			tapHold[e.target.id] = false;
+			tapHold.dirUp = false;
+			tapHold.dirDown = false;
+			tapHold.dirLeft = false;
+			tapHold.dirRight = false;
 		});
 		
-if(tapHold.u && player.y > (road.top + 70)) player.y -= 0.1;			
-if(tapHold.d && player.y < (road.bottom - 85)) player.y += 0.1;	
-if(tapHold.l && player.x > 0) player.x -= 0.1;
-if(tapHold.r && player.x < (road.width - 70)) player.x += 0.1;
+if(tapHold.dirUp && player.y > (road.top + 70)) player.y -= 0.1;			
+if(tapHold.dirDown && player.y < (road.bottom - 85)) player.y += 0.1;	
+if(tapHold.dirLeft && player.x > 0) player.x -= 0.1;
+if(tapHold.dirRight && player.x < (road.width - 70)) player.x += 0.1;
 		
 	}
 }
