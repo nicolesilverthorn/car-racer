@@ -2,6 +2,7 @@ const score = document.querySelector('.score');
 const startScreen = document.querySelector('.startScreen');
 const gameArea = document.querySelector('.gameArea');
 const level = document.querySelector('.level');
+//const dirPad = document.querySelector('.dirPad');
 
 let gameStart = new Audio();
 let gameOver = new Audio();
@@ -24,12 +25,17 @@ let keys = {
     ArrowLeft: false,
     ArrowRight: false
 };
-let tapHold = {
+let dirPad = {
 	dirUp: false,
 	dirDown: false,
-	dirLeft: false, 
+	dirLeft: false,
 	dirRight: false
 };
+
+dirPad.addEventListener('touchstart', function tapHold() {
+  dirPad.USER_IS_TOUCHING = true;
+  dirPad.removeEventListener('touchstart', tapHold, false);
+}, false);
 
 level.addEventListener('click', (e)=> {
     player.speed = levelSpeed[e.target.id];
@@ -190,11 +196,7 @@ function gamePlay() {
 		document.addEventListener('touchstart', (e)=>{
 			e.preventDefault();
 			e.stopPropagation();
-			tapHold[e.target.id] = true;
-			tapHold.dirUp = true;
-			tapHold.dirDown = true;
-			tapHold.dirLeft = true;
-			tapHold.dirRight = true;
+			dirPad.USER_IS_TOUCHING = true;
 		});
 		document.addEventListener('keyup', (e)=>{
 			e.preventDefault();
@@ -203,17 +205,13 @@ function gamePlay() {
 		document.addEventListener('touchend', (e)=>{
 			e.preventDefault();
 			e.stopPropagation();
-			tapHold[e.target.id] = false;
-			tapHold.dirUp = false;
-			tapHold.dirDown = false;
-			tapHold.dirLeft = false;
-			tapHold.dirRight = false;
+			dirPad.USER_IS_TOUCHING = false;
 		});
 		
-if(tapHold.dirUp && player.y > (road.top + 70)) player.y -= 0.1;			
-if(tapHold.dirDown && player.y < (road.bottom - 85)) player.y += 0.1;	
-if(tapHold.dirLeft && player.x > 0) player.x -= 0.1;
-if(tapHold.dirRight && player.x < (road.width - 70)) player.x += 0.1;
+if(dirPad.USER_IS_TOUCHING && player.y > (road.top + 70)) player.y -= 0.1;			
+if(dirPad.USER_IS_TOUCHING && player.y < (road.bottom - 85)) player.y += 0.1;	
+if(dirPad.USER_IS_TOUCHING && player.x > 0) player.x -= 0.1;
+if(dirPad.USER_IS_TOUCHING && player.x < (road.width - 70)) player.x += 0.1;
 		
 	}
 }
