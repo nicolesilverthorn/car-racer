@@ -147,6 +147,7 @@ p{
 	}
 	
 	#dirUp{
+		display: block;
 		font-size: 30px;
 		font-weight: bold;
 		text-align: center;
@@ -164,6 +165,7 @@ p{
 	}
 	
 	#dirDown{
+		display: block;
 		font-size: 30px;
 		font-weight: bold;
 		text-align: center;
@@ -181,6 +183,7 @@ p{
 	}
 
 	#dirLeft{
+		display: block;
 		font-size: 30px;
 		font-weight: bold;
 		text-align: center;
@@ -198,6 +201,7 @@ p{
 	}
 
 	#dirRight{
+		display: block;
 		font-size: 30px;
 		font-weight: bold;
 		text-align: center;
