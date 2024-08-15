@@ -2,7 +2,6 @@ const score = document.querySelector('.score');
 const startScreen = document.querySelector('.startScreen');
 const gameArea = document.querySelector('.gameArea');
 const level = document.querySelector('.level');
-const dirPad = document.querySelector('.dirPad');
 
 let gameStart = new Audio();
 let gameOver = new Audio();
