@@ -179,6 +179,11 @@ function gamePlay() {
         if(keys.ArrowDown && player.y < (road.bottom - 85)) player.y += player.speed;
         if(keys.ArrowLeft && player.x > 0) player.x -= player.speed;
         if(keys.ArrowRight && player.x < (road.width - 70)) player.x += player.speed;
+		
+		if(dirPad.dirUp && player.y > (road.top + 70)) player.y -= 0.1;			
+		if(dirPad.dirDown && player.y < (road.bottom - 85)) player.y += 0.1;	
+		if(dirPad.dirLeft && player.x > 0) player.x -= 0.1;
+		if(dirPad.dirRight && player.x < (road.width - 70)) player.x += 0.1;
 
         carElement.style.top = player.y + "px";
         carElement.style.left = player.x + "px";
@@ -214,10 +219,7 @@ function gamePlay() {
 			dirPad.dirRight = false;
 		});
 		
-if(dirPad.dirUp && player.y > (road.top + 70)) player.y -= 0.1;			
-if(dirPad.dirDown && player.y < (road.bottom - 85)) player.y += 0.1;	
-if(dirPad.dirLeft && player.x > 0) player.x -= 0.1;
-if(dirPad.dirRight && player.x < (road.width - 70)) player.x += 0.1;
+
 		
 	}
 }
