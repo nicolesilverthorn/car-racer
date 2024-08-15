@@ -2,7 +2,7 @@ const score = document.querySelector('.score');
 const startScreen = document.querySelector('.startScreen');
 const gameArea = document.querySelector('.gameArea');
 const level = document.querySelector('.level');
-//const dirPad = document.querySelector('.dirPad');
+const dirPad = document.querySelector('.dirPad');
 
 let gameStart = new Audio();
 let gameOver = new Audio();
@@ -31,11 +31,6 @@ let dirPad = {
 	dirLeft: false,
 	dirRight: false
 };
-
-/*dirPad.addEventListener('touchstart', function tapHold() {
-  
-  //dirPad.removeEventListener('touchstart', tapHold, false);
-}, false);*/
 
 level.addEventListener('click', (e)=> {
     player.speed = levelSpeed[e.target.id];
@@ -174,12 +169,14 @@ function gamePlay() {
     if(player.start){
         moveRoadLines();
         moveEnemyCars(carElement);
-            
+        
+		/*BROWSER*/
         if(keys.ArrowUp && player.y > (road.top + 70)) player.y -= player.speed;
         if(keys.ArrowDown && player.y < (road.bottom - 85)) player.y += player.speed;
         if(keys.ArrowLeft && player.x > 0) player.x -= player.speed;
         if(keys.ArrowRight && player.x < (road.width - 70)) player.x += player.speed;
 		
+		/*MOBILE*/
 		if(dirPad.dirUp && player.y > (road.top + 70)) player.y -= 0.1;			
 		if(dirPad.dirDown && player.y < (road.bottom - 85)) player.y += 0.1;	
 		if(dirPad.dirLeft && player.x > 0) player.x -= 0.1;
