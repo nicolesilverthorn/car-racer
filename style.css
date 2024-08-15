@@ -113,7 +113,7 @@ p{
 }
 
 .dirPad{
-	display: none !important;
+	/*display: none !important;*/
 }
 
 @media screen and (max-width: 490px), (max-height: 900px) {
