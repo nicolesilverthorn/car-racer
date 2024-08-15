@@ -32,10 +32,10 @@ let dirPad = {
 	dirRight: false
 };
 
-dirPad.addEventListener('touchstart', function tapHold() {
-  dirPad.USER_IS_TOUCHING = true;
-  dirPad.removeEventListener('touchstart', tapHold, false);
-}, false);
+/*dirPad.addEventListener('touchstart', function tapHold() {
+  
+  //dirPad.removeEventListener('touchstart', tapHold, false);
+}, false);*/
 
 level.addEventListener('click', (e)=> {
     player.speed = levelSpeed[e.target.id];
@@ -196,7 +196,10 @@ function gamePlay() {
 		document.addEventListener('touchstart', (e)=>{
 			e.preventDefault();
 			e.stopPropagation();
-			dirPad.USER_IS_TOUCHING = true;
+			dirPad.dirUp = true;
+			dirPad.dirDown = true;
+			dirPad.dirLeft = true;
+			dirPad.dirRight = true;
 		});
 		document.addEventListener('keyup', (e)=>{
 			e.preventDefault();
@@ -205,13 +208,16 @@ function gamePlay() {
 		document.addEventListener('touchend', (e)=>{
 			e.preventDefault();
 			e.stopPropagation();
-			dirPad.USER_IS_TOUCHING = false;
+			dirPad.dirUp = false;
+			dirPad.dirDown = false;
+			dirPad.dirLeft = false;
+			dirPad.dirRight = false;
 		});
 		
-if(dirPad.USER_IS_TOUCHING && player.y > (road.top + 70)) player.y -= 0.1;			
-if(dirPad.USER_IS_TOUCHING && player.y < (road.bottom - 85)) player.y += 0.1;	
-if(dirPad.USER_IS_TOUCHING && player.x > 0) player.x -= 0.1;
-if(dirPad.USER_IS_TOUCHING && player.x < (road.width - 70)) player.x += 0.1;
+if(dirPad.dirUp && player.y > (road.top + 70)) player.y -= 0.1;			
+if(dirPad.dirDown && player.y < (road.bottom - 85)) player.y += 0.1;	
+if(dirPad.dirLeft && player.x > 0) player.x -= 0.1;
+if(dirPad.dirRight && player.x < (road.width - 70)) player.x += 0.1;
 		
 	}
 }
