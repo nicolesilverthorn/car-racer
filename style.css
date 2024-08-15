@@ -147,14 +147,13 @@ p{
 	}
 	
 	#dirUp{
-		display: block;
 		font-size: 30px;
 		font-weight: bold;
 		text-align: center;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		position: absolute;
+		position: relative;
 		left: calc(50% - 14px);
 		bottom: 100px;
 		width: 50px;
@@ -165,14 +164,13 @@ p{
 	}
 	
 	#dirDown{
-		display: block;
 		font-size: 30px;
 		font-weight: bold;
 		text-align: center;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		position: absolute;
+		position: relative;
 		left: calc(50% - 14px);
 		bottom: 0;
 		width: 50px;
@@ -183,14 +181,13 @@ p{
 	}
 
 	#dirLeft{
-		display: block;
 		font-size: 30px;
 		font-weight: bold;
 		text-align: center;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		position: absolute;
+		position: relative;
 		left: calc(50% - 60px);
 		bottom: 50px;		
 		width: 50px;
@@ -201,14 +198,13 @@ p{
 	}
 
 	#dirRight{
-		display: block;
 		font-size: 30px;
 		font-weight: bold;
 		text-align: center;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		position: absolute;
+		position: relative;
 		left: calc(50% + 32px);
 		bottom: 50px;		
 		width: 50px;
